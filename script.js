@@ -20,7 +20,6 @@ const quotes = [
     author: "Socrates"
   }
 ];
-
 const quoteElement = document.getElementById("quote");
 const authorElement = document.getElementById("author");
 const button = document.getElementById("generate-btn");
@@ -29,15 +28,12 @@ button.addEventListener("click", () => {
   const randomIndex = Math.floor(Math.random() * quotes.length);
   const randomQuote = quotes[randomIndex];
 
-  // Update the quote and author with animation
   quoteElement.textContent = `"${randomQuote.text}"`;
   authorElement.textContent = `- ${randomQuote.author}`;
 
-  // Add animation class
   quoteElement.style.animation = "fadeIn 1s ease-in-out";
   authorElement.style.animation = "fadeIn 1.5s ease-in-out";
 
-  // Remove animation class after it completes
   setTimeout(() => {
     quoteElement.style.animation = "";
     authorElement.style.animation = "";
